@@ -8,12 +8,8 @@ on:
     types: [ created ]
   push:
     branches: [ master, gh_ci_CD ]
-    paths:
-      - argo-cd-bridges/**/*
   pull_request:
     branches: [ master ]
-    paths:
-      - argo-cd-bridges/**/*
 
 jobs:
   build:
