@@ -8,6 +8,9 @@ on:
     types: [ created ]
   push:
     branches: [ master, gh_ci_CD ]
+    paths: 
+      - argo-cd-bridge/**/*
+      - .github/workflows/*
   pull_request:
     branches: [ master ]
 
@@ -24,9 +27,9 @@ jobs:
         python-version: 3.6
     - name: Install dependencies
       run: |
-        cd argo-cd-bridges/gitlab
         python -m pip install --upgrade pip
         pip install pipenv
+        cd argo-cd-bridges/gitlab
         pipenv install
     - name: Lint with flake8
       run: |
