@@ -9,11 +9,11 @@ on:
   push:
     branches: [ master ]
     paths:
-      - argo-cd-bridges/**
+      - argo-cd-bridges/**/*
   pull_request:
     branches: [ master ]
     paths:
-      - argo-cd-bridges/**
+      - argo-cd-bridges/**/*
 
 jobs:
   build:
