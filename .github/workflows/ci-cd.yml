@@ -7,7 +7,7 @@ on:
   label:
     types: [ created ]
   push:
-    branches: [ master ]
+    branches: [ master, gh_ci_CD ]
     paths:
       - argo-cd-bridges/**/*
   pull_request:
