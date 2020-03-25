@@ -47,5 +47,5 @@ jobs:
     - name: Test with pytest
       run: |
         cd argo-cd-bridges/gitlab
-        pip install pytest
-        pytest
+        pip install pytest pytest-custom_exit_code
+        pytest --suppress-no-test-exit-code
