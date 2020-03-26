@@ -49,3 +49,11 @@ jobs:
         cd argo-cd-bridges/gitlab
         pip install pytest pytest-custom_exit_code
         pytest --suppress-no-test-exit-code
+    - uses: pabrahamsson/github-actions/s2i
+      with:
+        base: registry.access.redhat.com/rhscl/python-36-rhel7:latest
+        output_image: "quay.io/pabrahamsson/argo-cd-bridge:${{ github.sha }}"
+        image_push_registry: quay.io
+        image_push_username: ${{ secrets.QUAY_USERNAME }}
+        image_push_password: ${{ secrets.QUAY_PASSWORD }}
+        image_tags: 'latest foo bar' 
