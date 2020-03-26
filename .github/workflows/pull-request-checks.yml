@@ -5,10 +5,7 @@
 name: Python CI
 
 on:
-  push:
-    branches:
-    - master
-    - gh_ci_CD
+  pull_request:
     paths:
     - argo-cd-bridge/**/*
     - .github/workflows/*
@@ -42,11 +39,3 @@ jobs:
       run: |
         pip install pytest pytest-custom_exit_code
         pytest $argo-cd-bridge-dir --suppress-no-test-exit-code
-    - uses: redhat-cop/github-actions/s2i@v2
-      with:
-        path: $argo-cd-dir
-        base: registry.access.redhat.com/rhscl/python-36-rhel7:latest
-        output_image: "quay.io/pabrahamsson/argo-cd-bridge:${{ github.sha }}"
-        image_push_registry: quay.io
-        image_push_username: ${{ secrets.QUAY_USERNAME }}
-        image_push_password: ${{ secrets.QUAY_PASSWORD }}
