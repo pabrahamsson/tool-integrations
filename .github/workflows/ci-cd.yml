@@ -14,7 +14,7 @@ on:
     - .github/workflows/*
 
 env:
-  argo-cd-brige-dir: argo-cd-bridges/gitlab
+  argo-cd-bridge-dir: argo-cd-bridges/gitlab
 
 jobs:
   build:
