@@ -49,7 +49,7 @@ jobs:
         cd argo-cd-bridges/gitlab
         pip install pytest pytest-custom_exit_code
         pytest --suppress-no-test-exit-code
-    - uses: pabrahamsson/github-actions/s2i
+    - uses: pabrahamsson/github-actions/s2i@v1
       with:
         base: registry.access.redhat.com/rhscl/python-36-rhel7:latest
         output_image: "quay.io/pabrahamsson/argo-cd-bridge:${{ github.sha }}"
