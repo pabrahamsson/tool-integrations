@@ -7,7 +7,6 @@ name: Python CI
 on:
   push:
     branches:
-    - master
     - gh_ci_CD
     paths:
     - argo-cd-bridge/**/*
