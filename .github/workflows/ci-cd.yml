@@ -5,9 +5,6 @@
 name: Python CI
 
 on:
-  label:
-    types:
-    - created
   push:
     branches:
     - master
