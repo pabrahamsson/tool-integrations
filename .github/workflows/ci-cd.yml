@@ -18,9 +18,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.7
@@ -53,4 +51,4 @@ jobs:
         image_push_registry: quay.io
         image_push_username: ${{ secrets.QUAY_USERNAME }}
         image_push_password: ${{ secrets.QUAY_PASSWORD }}
-        image_tags: 'latest foo bar' 
+        image_tags: latest foo bar
